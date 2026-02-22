@@ -10,7 +10,7 @@ Run assemble_us.bat or assemble_jp.bat. The resulting ROM will be created in the
 
 ### Other systems
 
-Should be pretty straightforward. Assemble main.asm with "REGION_US" or "REGION_JP" defined and link the single object file using the appropriate config file.
+Should be pretty straightforward. Assemble main.asm with **REGION_US** or **REGION_JP** defined and link the single object file using the appropriate config file.
 
 ## Making edits
 
