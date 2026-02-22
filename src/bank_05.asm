@@ -232,7 +232,7 @@ TitleScreenInitialWait:
 		JSR CODE_0FE36B				;C - - - - - 0x00A161 02:8151: 20 6B E3
 		LDA #snMenuCont_ID					;C - - - - - 0x00A164 02:8154: A9 03
 		STA a:soundTrigger			;C - - - - - 0x00A166 02:8156: 8D E1 00
-		LDA #.BANK(DATA_04A000)					;C - - - - - 0x00A169 02:8159: A9 04
+		LDA #.BANK(ImageTable1)					;C - - - - - 0x00A169 02:8159: A9 04
 		STA sprPrgBank				;C - - - - - 0x00A16B 02:815B: 8D 61 05
 		LDA #$00					;C - - - - - 0x00A16E 02:815E: A9 00
 		STA scratch0				;C - - - - - 0x00A170 02:8160: 85 00
@@ -1432,7 +1432,7 @@ AdventureStartSetup:
 	STA openingCounter				;C - - - - - 0x00A8FE 02:88EE: 8D CC 04
 	JSR SpawnAdventureStartBubble				;C - - - - - 0x00A901 02:88F1: 20 67 88
 	JSR CODE_058910				;C - - - - - 0x00A904 02:88F4: 20 10 89
-	LDA #.BANK(DATA_04A000)					;C - - - - - 0x00A907 02:88F7: A9 04
+	LDA #.BANK(ImageTable1)					;C - - - - - 0x00A907 02:88F7: A9 04
 	STA sprPrgBank				;C - - - - - 0x00A909 02:88F9: 8D 61 05
 	JSR AnimateNonBubbles				;C - - - - - 0x00A90C 02:88FC: 20 5C EE
 	JSR DrawObjects				;C - - - - - 0x00A90F 02:88FF: 20 E2 EE

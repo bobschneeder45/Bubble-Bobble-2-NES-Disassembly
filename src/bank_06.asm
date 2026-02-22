@@ -2088,7 +2088,7 @@ CutsceneActorScripts:
 
 caIntroCubby:
 	;- D 0 - - - 0x00DA60 03:BA50: 02
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$00
 	.byte CO_ATTR,$00
 	.byte CO_POS,132,152
@@ -2169,7 +2169,7 @@ caIntroCubby:
 
 caIntroJudy:
 	;- D 0 - - - 0x00DADA 03:BACA: 02
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$02
 	.byte CO_ATTR,$02
 	.byte CO_POS,116,152
@@ -2212,7 +2212,7 @@ caIntroJudy:
 
 caIntroHeartSkull:
 	;- D 0 - - - 0x00DB15 03:BB05: 02
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$00
 	.byte CO_ATTR,$02
 	.byte CO_POS,112,142
@@ -2258,7 +2258,7 @@ caIntroDrunk:
 	;- D 0 - - - 0x00DB47 03:BB37: 04
 	.byte CO_TIME,8
 	.byte CO_WAIT
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$03
 	.byte CO_ATTR,$03
 	.byte CO_POS,174,150
@@ -2301,7 +2301,7 @@ caRound70Judy:
 	;- D 0 - - - 0x00DB8E 03:BB7E: 0F
 	.byte CO_ATTR,$02
 	.byte CO_PAL,4*6,$0F,$0F,$37,$25
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$03
 	.byte CO_POS,128,15
 	.byte CO_ANIM
@@ -2332,7 +2332,7 @@ caRound70Skull:
 	.byte CO_WAIT
 	.byte CO_ATTR,$01
 	.byte CO_PAL,4*5,$0F,$0F,$3B,$2C
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$02
 	.byte CO_POS,156,15
 	.byte CO_ANIM
@@ -2347,7 +2347,7 @@ caRound70PlayerWon:
 	;- D 0 - - - 0x00DBD9 03:BBC9: 04
 	.byte CO_TIME,48
 	.byte CO_WAIT
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_ANIM
 	.word anEndingPlayerWalkR_ID
 	.byte CO_TIME,27
@@ -2360,7 +2360,7 @@ caRound70JudyFree:
 	;- D 0 - - - 0x00DBE9 03:BBD9: 0F
 	.byte CO_ATTR,$02
 	.byte CO_PAL,4*6,$0F,$0F,$37,$25
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$03
 	.byte CO_POS,128,15
 	.byte CO_ANIM
@@ -2383,7 +2383,7 @@ caRound70HeartL:
 	.byte CO_TIME,74
 	.byte CO_WAIT
 	.byte CO_ATTR,$02
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$02
 	.byte CO_POS,123,186
 	.byte CO_ANIM
@@ -2407,7 +2407,7 @@ caRound70HeartR:
 	.byte CO_TIME,74
 	.byte CO_WAIT
 	.byte CO_ATTR,$02
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$02
 	.byte CO_POS,140,186
 	.byte CO_ANIM
@@ -2429,7 +2429,7 @@ caRound70HeartR:
 caEndingCubby:
 	;- D 0 - - - 0x00DC4E 03:BC3E: 0F
 	.byte CO_ATTR,$00
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_POS,31,164
 	.byte CO_ANIM
 	.word anPlayerR_ID
@@ -2470,7 +2470,7 @@ caEndingFairyHeartR:
 	;Start out as fairy
 	.byte CO_ATTR,$03
 	.byte CO_PAL,4*7,$0F,$0F,$38,$27
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$02
 	.byte CO_POS,128,160
 	.byte CO_ANIM
@@ -2534,7 +2534,7 @@ caEndingMagicRJudy:
 	.byte CO_PAL,4*5,$0F,$0F,$30,$38
 	.byte CO_TIME,86
 	.byte CO_WAIT
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$03
 	.byte CO_POS,126,80
 	.byte CO_ANIM
@@ -2555,7 +2555,7 @@ caEndingMagicRJudy:
 	;Continue as Judy
 	.byte CO_ATTR,$02
 	.byte CO_PAL,4*6,$0F,$0F,$37,$25
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$01
 	.byte CO_POS,15,160
 	.byte CO_ANIM
@@ -2574,7 +2574,7 @@ caEndingMagicLHeartL:
 	.byte CO_PAL,4*5,$0F,$0F,$30,$38
 	.byte CO_TIME,86
 	.byte CO_WAIT
-	.byte CO_PRG,.BANK(DATA_0AA000)
+	.byte CO_PRG,.BANK(ImageTable2)
 	.byte CO_CHR,$03
 	.byte CO_POS,126,80
 	.byte CO_ANIM

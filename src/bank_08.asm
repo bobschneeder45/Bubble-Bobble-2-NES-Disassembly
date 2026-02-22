@@ -40,14 +40,14 @@ CODE_088033:
 	LDA currentRound				;C - - - - - 0x010054 04:8044: A5 D8
 	CMP #20					;C - - - - - 0x010056 04:8046: C9 14
 	BEQ CODE_088052				;C - - - - - 0x010058 04:8048: F0 08
-		LDA #.BANK(DATA_04A000)					;C - - - - - 0x01005A 04:804A: A9 04
+		LDA #.BANK(ImageTable1)					;C - - - - - 0x01005A 04:804A: A9 04
 		STA sprPrgBank				;C - - - - - 0x01005C 04:804C: 8D 61 05
 		JMP CODE_08805D				;C - - - - - 0x01005F 04:804F: 4C 5D 80
 CODE_088052:
 	LDA #$00					;C - - - - - 0x010062 04:8052: A9 00
 	STA vNametable				;C - - - - - 0x010064 04:8054: 85 2D
 	STA hNametable				;C - - - - - 0x010066 04:8056: 85 2F
-	LDA #.BANK(DATA_0AA000)					;C - - - - - 0x010068 04:8058: A9 0A
+	LDA #.BANK(ImageTable2)					;C - - - - - 0x010068 04:8058: A9 0A
 	STA sprPrgBank				;C - - - - - 0x01006A 04:805A: 8D 61 05
 CODE_08805D:
 	LDA powerUps				;C - - - - - 0x01006D 04:805D: A5 DE
@@ -4130,7 +4130,7 @@ CODE_089C68:
 SpawnAnnounceObj:
 	;00: Announcement index
 	;04: Obj slot
-	LDA #.BANK(DATA_0AA000)					;C - - - - - 0x011C86 04:9C76: A9 0A
+	LDA #.BANK(ImageTable2)					;C - - - - - 0x011C86 04:9C76: A9 0A
 	STA sprPrgBank				;C - - - - - 0x011C88 04:9C78: 8D 61 05
 	LDX #$00					;C - - - - - 0x011C8B 04:9C7B: A2 00
 @setcolor:
@@ -4438,7 +4438,7 @@ StartBonusRound:
 	STA ram_0475				;C - - - - - 0x011E3F 04:9E2F: 8D 75 04
 	JSR CODE_0FE36B				;C - - - - - 0x011E42 04:9E32: 20 6B E3
 	JSR DespawnNonPlayerObjects				;C - - - - - 0x011E45 04:9E35: 20 E1 9E
-	LDA #.BANK(DATA_0AA000)					;C - - - - - 0x011E48 04:9E38: A9 0A
+	LDA #.BANK(ImageTable2)					;C - - - - - 0x011E48 04:9E38: A9 0A
 	STA sprPrgBank				;C - - - - - 0x011E4A 04:9E3A: 8D 61 05
 
 	LDA #chrThunder_ID					;C - - - - - 0x011E4D 04:9E3D: A9 50

@@ -2645,23 +2645,24 @@ CODE_0FEDA3:
 	PHA							;- - - - - - 0x01EDB4 07:EDA4: 48
 	TYA							;- - - - - - 0x01EDB5 07:EDA5: 98
 	PHA							;- - - - - - 0x01EDB6 07:EDA6: 48
-
+	
+	;ImageTable1 and ImageTable2 both at $A000 in their respective banks
 .ifdef REGION_JP
-	LDA #.BANK(DATA_04A000)
+	LDA #.BANK(ImageTable1)
 	STA prgBankB
 	STA $8001
 .else
 	LDA #$00					;- - - - - - 0x01EDB7 07:EDA7: A9
 	ORA #$07					;- - - - - - 0x01EDB9 07:EDA9: 09
 	STA $8000					;- - - - - - 0x01EDBB 07:EDAB: 8D
-	LDA #.BANK(DATA_04A000)					;- - - - - - 0x01EDBE 07:EDAE: A9
+	LDA #.BANK(ImageTable1)					;- - - - - - 0x01EDBE 07:EDAE: A9
 	STA $8001					;- - - - - - 0x01EDC0 07:EDB0: 8D
 	STA prgBankB				;- - - - - - 0x01EDC3 07:EDB3: 85
 
 	LDA #$00					;- - - - - - 0x01EDC5 07:EDB5: A9
 	ORA #$07					;- - - - - - 0x01EDC7 07:EDB7: 09
 	STA $8000					;- - - - - - 0x01EDC9 07:EDB9: 8D
-	LDA #.BANK(DATA_04A000)					;- - - - - - 0x01EDCC 07:EDBC: A9
+	LDA #.BANK(ImageTable1)					;- - - - - - 0x01EDCC 07:EDBC: A9
 	STA $8001					;- - - - - - 0x01EDCE 07:EDBE: 8D
 	STA prgBankB				;- - - - - - 0x01EDD1 07:EDC1: 85
 .endif

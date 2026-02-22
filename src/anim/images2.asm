@@ -1,6 +1,6 @@
 ;Include at beginning of a sprite bank
 
-DATA_0AA000:
+ImageTable2:
 	;- - - - - - 0x014010 05:A000: 00
 	.word imgDummy_Copy
 	.word imgPlayerL_Copy

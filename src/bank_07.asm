@@ -334,7 +334,7 @@ DATA_0781DE:
 	.word CODE_0785BB
 
 CODE_078200:
-	LDA #.BANK(DATA_0AA000)					;C - - - - - 0x00E210 03:8200: A9 0A
+	LDA #.BANK(ImageTable2)					;C - - - - - 0x00E210 03:8200: A9 0A
 	STA sprPrgBank				;C - - - - - 0x00E212 03:8202: 8D 61 05
 	LDA #$00					;C - - - - - 0x00E215 03:8205: A9 00
 	STA ram_04D1				;C - - - - - 0x00E217 03:8207: 8D D1 04
@@ -345,7 +345,7 @@ CODE_078200:
 	JSR CODE_0FE626				;C - - - - - 0x00E222 03:8212: 20 26 E6
 	RTS							;C - - - - - 0x00E225 03:8215: 60
 CODE_078216:
-	LDA #.BANK(DATA_0AA000)					;C - - - - - 0x00E226 03:8216: A9 0A
+	LDA #.BANK(ImageTable2)					;C - - - - - 0x00E226 03:8216: A9 0A
 	STA sprPrgBank				;C - - - - - 0x00E228 03:8218: 8D 61 05
 	JSR CODE_0FE5F0				;C - - - - - 0x00E22B 03:821B: 20 F0 E5
 	LDA #$01					;C - - - - - 0x00E22E 03:821E: A9 01
@@ -370,7 +370,7 @@ CODE_07822D:
 
 	LDA #$01					;C - - - - - 0x00E24A 03:823A: A9 01
 	STA enemyDir				;C - - - - - 0x00E24C 03:823C: 85 A2
-	LDA #.BANK(DATA_04A000)					;C - - - - - 0x00E24E 03:823E: A9 04
+	LDA #.BANK(ImageTable1)					;C - - - - - 0x00E24E 03:823E: A9 04
 	STA sprPrgBank				;C - - - - - 0x00E250 03:8240: 8D 61 05
 	JSR CODE_07826D				;C - - - - - 0x00E253 03:8243: 20 6D 82
 	RTS							;C - - - - - 0x00E256 03:8246: 60
@@ -383,14 +383,14 @@ CODE_078247:
 @ret:
 	RTS							;C - - - - - 0x00E260 03:8250: 60
 CODE_078251:
-	LDA #.BANK(DATA_0AA000)					;C - - - - - 0x00E261 03:8251: A9 0A
+	LDA #.BANK(ImageTable2)					;C - - - - - 0x00E261 03:8251: A9 0A
 	STA sprPrgBank				;C - - - - - 0x00E263 03:8253: 8D 61 05
 	LDA #$00					;C - - - - - 0x00E266 03:8256: A9 00
 	STA ram_04D1				;C - - - - - 0x00E268 03:8258: 8D D1 04
 	JSR CODE_07819B				;C - - - - - 0x00E26B 03:825B: 20 9B 81
 	RTS							;C - - - - - 0x00E26E 03:825E: 60
 CODE_07825F:
-	LDA #.BANK(DATA_0AA000)					;C - - - - - 0x00E26F 03:825F: A9 0A
+	LDA #.BANK(ImageTable2)					;C - - - - - 0x00E26F 03:825F: A9 0A
 	STA sprPrgBank				;C - - - - - 0x00E271 03:8261: 8D 61 05
 	LDA #$0E					;C - - - - - 0x00E274 03:8264: A9 0E
 	STA ram_04D1				;C - - - - - 0x00E276 03:8266: 8D D1 04
@@ -1930,7 +1930,7 @@ CODE_078C24:
 	LDA ram_054D				;C - - - - - 0x00EC34 03:8C24: AD 4D 05
 	BNE CODE_078C99				;C - - - - - 0x00EC37 03:8C27: D0 70
 
-	LDA #.BANK(DATA_04A000)					;C - - - - - 0x00EC39 03:8C29: A9 04
+	LDA #.BANK(ImageTable1)					;C - - - - - 0x00EC39 03:8C29: A9 04
 	STA sprPrgBank				;C - - - - - 0x00EC3B 03:8C2B: 8D 61 05
 	LDA #snBigReward_ID					;C - - - - - 0x00EC3E 03:8C2E: A9 0F
 	STA a:soundTrigger				;C - - - - - 0x00EC40 03:8C30: 8D E1 00
