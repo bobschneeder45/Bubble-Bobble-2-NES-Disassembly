@@ -14,10 +14,10 @@ Should be pretty straightforward. Assemble main.asm with **REGION_US** or **REGI
 
 ## Making edits
 
-<p>The disassembled code is not fully labeled but I've gone for the most important parts to aid in porting, modding or further analysis of the code.<br>
-Some banks (actually several ones in the Japanese version) have filler data included at the end. Take these out to get space for new content.</p>
+<p>The disassembled code is not fully labeled but I've gone for the most important parts to aid in porting, modding or further analysis of the code.</p>
 
-<p>Everything should (hopefully) be disassembled and labeled enough to let you move stuff around without issues. Only the two sprite tables (ImageTable1 and ImageTable2) need to be at the start of their respective banks.</p>
+<p>Some banks (actually several ones in the Japanese version) have filler data included at the end. Take these out to get space for new content.
+Everything should (hopefully) be disassembled and labeled enough to let you move stuff around without issues. Only the two sprite tables (ImageTable1 and ImageTable2) need to be at the start of their respective banks.</p>
 
 ## Introduction to the game engine
 
