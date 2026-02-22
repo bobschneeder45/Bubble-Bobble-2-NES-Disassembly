@@ -1,0 +1,35 @@
+MMC3
+ROM $40000 bytes
+
+PRG banks $2000 bytes each
+ROM $10 PRG banks (00000-20000)
+a000 During boot screen
+12000 During first level
+
+CHR banks $400 bytes each
+0000 Level BG tiles
+0800 Next level BG tiles/HUD font
+0C00 HUD font
+1000 Player
+1800 Enemy1/SprFontABCD
+1c00 Enemy2/SprFont0123
+2000 Maps
+ROM 20000-40000 CHR ($80 CHR banks)
+
+PRG
+00 0000 a000 Boot, intro, title screen, levels
+01 2000 a000 Title screen map
+02 4000 a000 Taito logo map
+03 6000 a000 Boss data
+04 8000 a000 Data for screens (menu, ending, not levels)
+05 a000 8000 Taito logo code, intro code, title screen code
+06 c000 a000 Pointers for each level
+07 e000 8000 Level code
+08 10000 8000 Level code (transitions?)
+09 12000 8000 Level code
+0a 14000 a000 Level data
+0b 16000 8000 Level code
+0c 18000 a000 Sprite data? (title screen, level)
+0d 1a000 a000 Sprite data? (Taito logo, level)
+0e 1c000 c000 Code (Taito logo, intro, title screen), Data (Level)
+0f 1e000 e000 Code (Taito logo, intro, title screen, level)

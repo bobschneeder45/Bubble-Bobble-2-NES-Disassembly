@@ -1,0 +1,7 @@
+Patch PRG 13a7d (13a8d) with F6 9C to run when pausing
+Better: Patch PRG 1E0FF 09, 1E0E9 F6, 1E0ED 9C to run at startup
+
+2P UP/DOWN: Increase/decrease number
+2P A: Start round
+1P A: Play sound
+1P B: Play music

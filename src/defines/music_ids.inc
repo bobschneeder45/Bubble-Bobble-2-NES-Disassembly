@@ -1,0 +1,16 @@
+trSilence_ID =				$0
+trTitle_ID =				$1
+trEnding_ID =				$2
+trGiantTower_ID =			$3
+trBoomtown_ID =				$4
+trShiningLake_ID =			$5
+trFireCastle_ID =			$6
+trBoss_ID =					$7
+trBonusGame_ID =			$8
+trIntro_ID =				$9
+trVictory_ID =				$A
+trFinalBoss_ID =			$B
+trUNK0C_ID =				$C
+trSkelWarning_ID =			$D
+trSkelMonsta_ID =			$E
+trGameOver_ID =				$F

@@ -1,0 +1,17 @@
+caIntroCubby_ID =			0
+caIntroJudy_ID =			1
+caIntroHeartSkull_ID =		2
+caIntroDrunk_ID =			3
+caREM04_ID =				4
+caREM05_ID =				5
+caREM06_ID =				6
+caRound70Judy_ID =			7
+caRound70Skull_ID =			8
+caRound70PlayerWon_ID =		9
+caRound70JudyFree_ID =		10
+caRound70HeartL_ID =		11
+caRound70HeartR_ID =		12
+caEndingCubby_ID =			13
+caEndingFairyHeartR_ID =	14
+caEndingMagicRJudy_ID =		15
+caEndingMagicLHeartL_ID =	16

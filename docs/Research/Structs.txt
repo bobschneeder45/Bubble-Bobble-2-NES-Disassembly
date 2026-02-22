@@ -1,0 +1,2 @@
+0200 Spr buffer
+0300 Palette buffer

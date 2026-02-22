@@ -1,0 +1,1 @@
+fc /b input\bubbob2_us.nes bubbob2_us.nes

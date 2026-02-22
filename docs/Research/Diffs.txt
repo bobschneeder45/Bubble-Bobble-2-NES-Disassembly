@@ -1,0 +1,109 @@
+[JP]
+Free space more often random instead of FFs, sometimes 00
+Different title screen (tiles, palette, macros, map)
+Typo in adventure start map
+Round 55 map different (Waterfalls in corners)
+Data before first sprite in bank 04 different
+Round 50 2nd initial enemy palette $14 instead of $00
+Missing variable before $4A
+StartTaitoLogo writes $40 to $E000 instead of $01 to $A000, also doesn't reset roundSkelDelay
+More instances where $40 is written to $E000 instead of $01 to $A000
+Title screen initial wait lasts 2 seconds in JP, 1.5 in US
+Title screen uses roundSkelDelay as flag
+Title screen different text positions
+Quickly writing new bank. newPrgBank and SwapPrgBank don't exist
+Some quick bank swaps also changed to more verbose double writes in US
+Variable $52 removed in US
+Several JMPs replaced by BNE or BEQ
+Ending fades in faster in JP
+Old unused fading code for title screen/adventure start? (0AAD4)
+0B038: When holding B, check if already shooting, US checks this in TrySingleBubble instead
+0B4FC: $04CA not set to zero when letting go of B while floating
+Different player Y at 0B6B2 in JP
+US adds routine at 0BBCD that appears unused
+Unused 6 bytes at 0C0B2 all FF in JP
+Round 3 different air flow
+Round 6 different air flow
+Round 15 different air flow
+Round 25 different air flow
+Round 26 different air flow
+Round 31 different air flow
+Round 35 different air flow
+Round 38 different air flow (all zeroes in US)
+Round 72 different air flow
+Banks 06,07 using 00 as fill value rather than FF in JP
+Additional variable reset at 0E255
+Shoe car code changed a bit around 0E408
+Different value at 0E414 in JP
+Table at 0E644 have 01 and FF swapped in JP
+Round 43 water collision calculated differently, at 0E6DA
+Holy cup also ensures enemy type isn't zero in US
+Redundant LDX #$00 at 0EADB removed in US
+Redundant JMP at 0F8DA removed in US
+Extra US code at 0F912 ensures any of three bubbles have non-zero Y pos
+US additionally resets jingleTrigger and roundPaused at 10012
+JP writes $40 to $E000 instead of $01 tot $A000 at 102D4 in RoundBGSetup
+Same at 10327
+US additional roundSkelDelay check at 10593
+JP starts bubble anim at 11BB0
+US resets shooting at 11F57
+Different branch target at 12147 in JP
+US additional code at 1214F
+US additional check at 122C8
+JP different jump at 126A5
+JP loads nmiPrgBankA at 126D8 and does nothing with it
+US more efficient X reg usage at 12AE0 in HandleShooting
+JP loads scratch1 to both X and A at 12B07, same with scratch2
+JP unreachable extra code behind JMP instruction at 12C1E
+ProjOp_GetParentHits (133C4) not in JP
+US resets jingleTrigger and roundPaused at 1384D
+Redundant JMP at 13AB5 in JP
+Lives printing code at 13BBB different in JP (No space)
+Different HUD target for hearts as well at 13C58 in JP (No space)
+JP has various additional routines at 13D06 (Debug menu! Setup at 09:9CF6/13D06)
+roundSkelDelay check at 13EDF not in JP BubblesTravelUpdate
+JP has BubblesTravelUpdate in bank 0F instead of bank 09
+JP rounds have different (and incorrect?) IRQ latch values (at 15A8A)
+(Latch values are $100 minus the correct value in JP)
+Projectile script diff at 15CB5 in JP (Set parent state in US)
+Projectile script diff at 15CD4 in JP (Set parent state here instead of two other ops)
+psNeedParentAndScreen don't check parent state in JP
+US calls animation and drawing routines as 160FC
+Redundant JMPs at 1613D, 1614C and 1615D in JP
+Long BEQ at 16216 in JP, BNE & JMP in US
+Different anim IDs at 166A6 in JP due to anim $69 and $6D
+US adds code at 16C88 that wraps the player from the bottom to the top of the screen
+Different branch target at 17017 in JP
+US ANDs $CA var with $1E at 17801
+Trash can decreases $CB at 179F7 in JP
+US does it at 17A43 instead
+JP routine at 17A58 different, using larger table (rounds 0-39)
+Animations $69 and $6C swapped places in US (table at 18010)
+Enemy differences on rounds 01,02,04,07,09,11,12,13,14,15,16,17,18,21,24,26,28,33,35,37,
+41,47,49,50,52,53,54,55,59,61,67,76
+JP differing audio engine table at 1CE53
+JP differing audio engine data at 1CE80
+JP differing audio engine data at 1CF50
+JP calls a routine during NMI that cancels out opposite D-pad directions
+JP writes to $C003 and $C002 instead of $E000 or $E001 in bank 0F
+JP has additional routine at 1E4ED that uses $055D
+JP writes to $C002 instead of $E001 at 1EBC2
+RunBankedSub writes bank number to $8000 instead of $8001 in JP
+US swaps instructions at 1EA0F
+US adds NOPs at 1EB94
+IRQ tables (at 1ED0C in JP) have different values in JP, similar to the latch table
+BEQ fine in JP at 1F4DB instead of JMP
+US checks bubble state at 1FA01
+JP copies CHR slot at 1FA13, used at 1FA24 (US splits the routine)
+US sets state $88 instead of $03 at 1FABA
+JP sets state $19 instead of $89 at 1FA62
+JP 1FA66 more stuff moved to previous routine in US
+JP 1FDF2 routine removed in US
+BEQ instead of BCS at 1FE1D and 1FE58 in JP
+SpawnProj writes bank number to $8000 instead of $8001 in JP
+Routine at 1FEAA placed a bit later in JP
+
+3rd Giant Tower CHR bank different (ABCDE in US)
+3rd Shining Lake CHR bank different (ABCD in US)
+2nd Big rewards CHR bank different (Last row blank instead of X in US)
+The 4 title screen CHR banks are different (new US title screen)

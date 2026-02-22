@@ -1,0 +1,459 @@
+;--- JP-exculsives ---
+.ifdef REGION_JP
+
+.ifndef INCLUDE_DEBUG_MENU
+	INCLUDE_DEBUG_MENU = 	1
+.endif
+
+.ifndef JP_ENEMY_PLACEMENT
+	JP_ENEMY_PLACEMENT = 	1
+.endif
+
+.ifndef JP_ROUND_MAPS
+	JP_ROUND_MAPS = 		1
+.endif
+
+.ifndef JP_AIRFLOW
+	JP_AIRFLOW = 			1
+.endif
+
+.endif
+
+;--- RAM ---
+.include "ram.inc"
+
+;--- Buttons ---
+KEY_A =			$01
+KEY_B =			$02
+KEY_SELECT =	$04
+KEY_START =		$08
+KEY_UP =		$10
+KEY_DOWN =		$20
+KEY_LEFT =		$40
+KEY_RIGHT =		$80
+
+;--- Registers ---
+PPUCTRL =		$2000
+PPUMASK =		$2001
+PPUSTATUS =		$2002
+OAMADDR =		$2003
+OAMDATA =		$2004
+PPUSCROLL =		$2005
+PPUADDR =		$2006
+PPUDATA =		$2007
+
+SQ1_VOL =		$4000
+SQ1_SWEEP =		$4001
+SQ1_LO =		$4002
+SQ1_HI =		$4003
+SQ2_VOL =		$4004
+SQ2_SWEEP =		$4005
+SQ2_LO =		$4006
+SQ2_HI =		$4007
+TRI_LINEAR =	$4008
+TRI_LO =		$400A
+TRI_HI =		$400B
+NOISE_VOL =		$400C
+NOISE_LO =		$400E
+NOISE_HI =		$400F
+DMC_FREQ =		$4010
+DMC_RAW =		$4011
+DMC_START =		$4012
+DMC_LEN =		$4013
+OAMDMA =		$4014
+SND_CHN =		$4015
+JOY1 =			$4016
+JOY2 =			$4017
+
+;--- Register values ---
+;PPUCTRL
+PPU_NAMETABLE_2000 =		$00
+PPU_NAMETABLE_2400 =		$01
+PPU_NAMETABLE_2800 =		$02
+PPU_NAMETABLE_2C00 =		$03
+PPU_NAMETABLE = 			$03
+PPU_INC_32 =				$04
+PPU_OBJTABLE_1000 =			$08
+PPU_BGTABLE_1000 =			$10
+PPU_OBJ_8X16 =				$20
+PPU_SLAVE	 =				$40
+PPU_NMI =					$80
+
+;PPUMASK
+PPU_GRAYSCALE =				$01
+PPU_LEFTBG =				$02
+PPU_LEFTOBJ =				$04
+PPU_BG =					$08
+PPU_OBJ =					$10
+PPU_RED =					$20
+PPU_GREEN =					$40
+PPU_BLUE =					$80
+
+;PPUSTATUS
+PPU_OVERFLOW =				$20
+PPU_SPRZERO =				$40
+PPU_VBLANK =				$80
+
+;--- OAM ---
+OAM_PAL =						$03
+OAM_PRIO =						$20
+OAM_HFLIP =						$40
+OAM_VFLIP =						$80
+
+;--- IDs/indexes ---
+FADE_OUT =					0
+FADE_IN =					1
+FADE_WHITE =				2
+
+COL_BG =					0
+COL_SPR =					16
+
+;- Rounds -
+OSLOT_PLAYER =				0
+OSLOT_PROJ =				1
+OSLOT_ENEMY =				9
+OSLOT_ICON =				19
+OSLOT_BUBBLE =				20
+
+RFLAG_CLEAR =				$1
+RFLAG_PARASOL =				$2
+RFLAG_UNK08 =				$8
+RFLAG_UNK10 =				$10
+RFLAG_BONUS_GAME =			$20
+RFLAG_MULTI_REWARD =		$40
+RFLAG_BIG_REWARD =			$80
+
+POWERUP_NONE =				$0
+POWERUP_CANDY =				$1
+POWERUP_SHOE =				$2
+POWERUP_BIG_BELL =			$4
+POWERUP_BIG_TRIANGLE =		$8
+POWERUP_BIG_COIN =			$10
+POWERUP_BIG_DIAMOND =		$20
+POWERUP_BOSS_BONUS =		$80
+
+PLAYER_STATE_NORMAL =		$0
+PLAYER_STATE_INFLATING =	$1
+PLAYER_STATE_FLOATING =		$2
+PLAYER_STATE_DEAD =			$3
+PLAYER_STATE_DUMMY4 =		$4
+PLAYER_STATE_UNK5 =			$5
+PLAYER_STATE_DUMMY6 =		$6
+PLAYER_STATE_DUMMY7 =		$7
+PLAYER_STATE_NEEDLER =		$8
+PLAYER_STATE_HURT =			$9
+PLAYER_STATE_UNKA =			$A
+PLAYER_STATE_UNKB =			$B
+PLAYER_STATE_SLUGGISH =		$C
+PLAYER_STATE_UNKD =			$D
+
+DIR_NONE =					$0
+DIR_LEFT =					$1
+DIR_RIGHT =					$2
+DIR_INSTAPLACE =			$80		;For enemy spawning
+
+DMG_ENEMY =					$80		;OR with enemy ID
+DMG_STUCK =					$C0		;Needler syringe
+
+;- Bubbles -
+BUBBLE_EMERGING =			$80
+BUBBLE_RISING =				$1
+BUBBLE_EXPIRING =			$2
+BUBBLE_ENEMY =				$3
+BUBBLE_ENEMY_EXPIRING =		$4
+BUBBLE_POWER =				$5
+BUBBLE_POWER_POPPED =		$6
+BUBBLE_EXPIRED =			$19
+BUBBLE_EXPIRED_POP =		$20
+BUBBLE_POPPING =			$22
+BUBBLE_POPPED =				$23
+
+BUBV_REGULAR =				$0
+BUBV_THUNDER =				$1
+BUBV_FIRE =					$2
+BUBV_WATER =				$3
+BUBV_SNOW =					$4
+BUBV_WIND =					$5
+BUBV_STAR =					$6
+BUBV_BOMB =					$7
+BUBV_DRINK =				$80
+
+BUBDIR_UP =					$0
+BUBDIR_DOWN =				$1
+BUBDIR_LEFT =				$2
+BUBDIR_RIGHT =				$3
+
+;- Enemies -
+ENEMY_NONE =				$0
+ENEMY_ZENCHAN =				$1
+ENEMY_BANEBOU =				$2
+ENEMY_BLOBBY =				$3
+ENEMY_PULPUL =				$4
+ENEMY_NEEDLER =				$5
+ENEMY_INVADER =				$6
+ENEMY_MONSTA =				$7
+ENEMY_HEITAIKUN =			$8
+ENEMY_CARRYHELI =			$9
+ENEMY_FLARION =				$A
+ENEMY_SNAGGER =				$B
+ENEMY_MANTICHAR =			$C
+ENEMY_ROBOZEN =				$D
+ENEMY_KIRIKABUN =			$E
+ENEMY_TWIZZER =				$F
+ENEMY_DRUNK =				$10
+ENEMY_FLUTTERFLY =			$11
+ENEMY_DOH =					$12
+ENEMY_SPRINGIT =			$13
+ENEMY_SPRINGITBODY =		$14
+ENEMY_TRASH =				$15
+ENEMY_SKELMONSTA =			$16
+ENEMY_CHUCKER =				$17
+ENEMY_ROUNDER =				$18
+ENEMY_RUCKUS =				$19
+ENEMY_MADMONKEY =			$1A
+ENEMY_ROC =					$1B
+ENEMY_SUPERDRUNK =			$1C
+ENEMY_BLUESKULL =			$1D
+ENEMY_PURPLESKULL =			$1E
+ENEMY_REDSKULL =			$1F
+ENEMY_SUPERREDSKULL =		$20
+ENEMY_SPIKEBALL =			$21
+ENEMY_REWARD =				$22
+ENEMY_UNK23 =				$23		;Same update routine as $24 (possibly removed routine right before that one), crashes
+ENEMY_GHOSTMONSTA =			$24
+
+ENEMY_DYING =				$B
+ENEMY_COLLECTABLE =			$D
+
+PROJ_HIT =					$80
+
+MULTIPROJ_ROC =					0
+MULTIPROJ_SUPERDRUNK =			1
+MULTIPROJ_BLUESKULL =			2
+MULTIPROJ_SUPERDRUNK_DEFEAT =	3
+
+PO_BREAK =					$0
+PO_TYPE =					$1
+PO_NEXT_TYPE =				$2
+PO_HSPEED =					$3
+PO_VSPEED =					$4
+PO_SPEED =					$5
+PO_ANGLE =					$6
+PO_GET_PLAYER_CONTACT =		$7
+PO_GET_OFFSCREEN =			$8
+PO_ANIM =					$9
+PO_DESPAWN =				$A
+PO_END =					$B
+PO_GET_PARENT_DIR =			$C
+PO_JUMP =					$D
+PO_JUMP_COUNT =				$E
+PO_HTURN =					$F
+PO_VTURN =					$10
+PO_GRAV =					$11
+PO_PARENT_STATE =			$12
+PO_GET_PARENT_STATE =		$13
+PO_JUMP_EQUAL =				$14
+PO_JUMP_NOT_EQUAL =			$15
+PO_SET =					$16
+PO_HOMING_PLAYER =			$17
+PO_HOMING_ENEMY =			$18
+PO_GET_COUNT =				$19
+PO_GET_PLAYER_DIST =		$1A
+PO_MULTIPROJ =				$1B
+PO_GET_ENEMY_REACHED =		$1C
+PO_HOMING_TURN =			$1D
+PO_WIDE_SCROLL =			$1E
+PO_NOP =					$1F
+PO_APPLY_ANGLE =			$20
+PO_COPY =					$21
+PO_HURT_PLAYER =			$22
+PO_CATCH_PLAYER =			$23
+PO_JUMP_NOT_LARGER =		$24
+PO_JUMP_LARGER =			$25
+PO_GET_POS =				$26
+PO_COUNT =					$27
+PO_TERRAIN =				$28
+PO_GET_PARENT =				$29
+PO_JUMP_FRAME =				$2A
+PO_GET_SPEED =				$2B
+PO_PARENT_ANIM =			$2C
+PO_COPY_PLAYER_STATE =		$2D
+PO_MISSILE_ANIM =			$2E
+PO_SLOW =					$2F
+PO_SOUND =					$30
+PO_COUNT_TYPE =				$31
+PO_TRACTOR_MISSILE =		$32
+PO_ADJUST_HITS =			$33
+PO_WARP_PARENT =			$34
+PO_BONUS_BALL =				$35
+PO_DESPAWN_ALL =			$36
+PO_PARENT =					$37
+PO_GET_PLAYER_SIDE =		$38
+PO_PLAYER_STATE =			$39
+PO_HEART =					$3A
+;3B is US-only and unused
+PO_GET_PARENT_HITS =		$3B
+
+.include "defines/projectile_ids.inc"
+
+;- Items -
+ITEM_NONE =					$0
+ITEM_HEART =				$1
+ITEM_HOLY_CUP =				$2
+ITEM_SECRET_DOOR =			$3
+ITEM_PENCIL =				$4
+ITEM_CRYSTAL =				$5
+ITEM_STAR_ROD =				$6
+ITEM_SHOE =					$7
+ITEM_CANDY =				$8
+ITEM_LIFE =					$9
+ITEM_CLOCK =				$A
+ITEM_STAFF =				$B
+ITEM_TREE =					$C
+ITEM_PARASOL =				$D
+;These have sounds listed but display as bubbles and crash when collected
+ITEM_REM0E =				$E
+ITEM_REM0F =				$F
+ITEM_REM10 =				$10
+ITEM_REM11 =				$11
+VALID_ITEMS =				$12
+
+REWARDS_BONUS_GAME =		$0
+REWARDS_ROUND =				$1
+
+;- Cutscenes -
+CO_STALL =					$0
+CO_ANIM =					$1
+CO_PRG =					$2
+CO_POS =					$3
+CO_TIME =					$4
+CO_MOVE =					$5
+CO_JUMP =					$6
+CO_WAIT =					$7
+CO_REMOVE =					$8
+CO_CHR =					$9
+CO_BEGIN_LOOP =				$A
+CO_LOOP =					$B
+CO_SHOW =					$C
+CO_HIDE =					$D
+CO_PAL =					$E
+CO_ATTR =					$F
+CO_BOSS =					$10
+
+CS_INTRO =					(3*0)
+CS_REM01 =					(3*1)
+CS_ROUND70 =				(3*2)
+CS_ROUND70_WIN =			(3*3)
+CS_ENDING =					(3*4)
+
+.include "defines/actor_ids.inc"
+
+;- HUD -
+LIVES_TOTAL_DIGITS =		$2
+SCORE_TOTAL_DIGITS =		$7
+HUD_TOTAL_DIGITS =			(LIVES_TOTAL_DIGITS + SCORE_TOTAL_DIGITS)
+
+ANNOUNCE_ROUND =			$0
+ANNOUNCE_CLEAR =			$1
+ANNOUNCE_PAUSE =			$2
+ANNOUNCE_PLAYER =			$3
+
+BONUS_ANNOUNCE_10000 =		$2
+BONUS_ANNOUNCE_NO_BONUS =	$4
+BONUS_ANNOUNCE_GAME =		$6
+BONUS_ANNOUNCE_PAUSE =		$8
+BONUS_ANNOUNCE_100000 =		$A
+
+;- SOUND -
+SOUND_PLAYING =				$80
+MUSIC_PLAYING =				$80
+JINGLE_PLAYING =			$80
+
+CHOFS_MUSIC_SQ1 =			$00
+CHOFS_MUSIC_SQ2 =			$18
+CHOFS_MUSIC_TRI =			$30
+CHOFS_MUSIC_NOISE =			$3F
+CHOFS_SOUND_SQ2 =			$47
+CHOFS_SOUND_NOISE =			$54
+
+CHMASK_NONE =				$00
+CHMASK_VOL =				$01
+CHMASK_SWEEP =				$02
+CHMASK_LO =					$04
+CHMASK_HI =					$08
+CHMASK_LINEAR =				$01
+
+SO_END =					$C0
+SO_BEGIN_LOOP1 =			$C2
+SO_BEGIN_LOOP2 =			$C4
+SO_LOOP1 =					$C6
+SO_LOOP2 =					$C8
+SO_CALL =					$CA
+SO_JUMP =					$CC
+SO_RET =					$CE
+SO_WAIT =					$D0
+SO_UNKD2 =					$D2
+SO_UNKD4 =					$D4
+SO_UNKD6 =					$D6
+SO_UNKD8 =					$D8
+SO_UNKDA =					$DA
+SO_UNKDC =					$DC
+SO_UNKDE =					$DE
+SO_LOHI =					$E0
+SO_ADD_LOHI =				$E2
+SO_VOL =					$E4
+SO_ADD_VOL =				$E6
+SO_LO =						$E8
+SO_ADD_LO =					$EA
+SO_SWEEP =					$EC
+SO_DMC =					$EE
+SO_UNKF0 =					$F0
+SO_UNKF2 =					$F2
+SO_UNKF4 =					$F4
+SO_UNKF6 =					$F6
+SO_RELOAD_LOHI =			$F8
+SO_UNKFA =					$FA
+
+SO_UNK00 =					$00
+SO_UNK50 =					$50
+SO_UNK60 =					$60
+SO_UNK70 =					$70
+SO_UNK80 =					$80
+SO_UNK90 =					$90
+SO_UNKA0 =					$A0
+SO_UNKB0 =					$B0
+
+.include "defines/music_ids.inc"
+.include "defines/sound_ids.inc"
+.include "defines/jingle_ids.inc"
+
+;- Bonus games -
+BONUS_ROUND_VOLLEYBALL =	81
+BONUS_ROUND_GEMS =			82
+BONUS_ROUND_BASKETBALL =	83
+
+;- Opening -
+SPLASH_CONTINUE =			$0
+SPLASH_GAME_OVER =			$1
+SPLASH_TAITO =				$2
+
+OPENING_START =				$0
+OPENING_SKULLS =			$1
+OPENING_SKULLS_HOLD =		$2
+OPENING_TREE =				$3
+OPENING_TREE_PLAY =			$4
+OPENING_TITLE_SCREEN =		$5
+OPENING_TITLE_SCREEN_HOLD =	$6
+OPENING_ADVENTURE =			$7
+OPENING_ADVENTURE_MOVE =	$8
+
+;- CHR banks -
+.include "defines/chr_ids.inc"
+
+;- Animations -
+.include "defines/animation_ids.inc"
+.include "defines/images1_ofs.inc"
+.include "defines/images2_ofs.inc"
+
+;- Maps -
+.include "defines/map_ids.inc"

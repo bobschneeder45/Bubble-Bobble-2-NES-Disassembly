@@ -1,0 +1,56 @@
+
+MEMORY {
+    ZP:          start = $00,    size = $100,    type = rw, file = "";
+	ST:	         start = $0100,  size = $100,    type = rw, file = "";
+    RAM:         start = $0200,  size = $600,    type = rw, file = "";
+    HDR:         start = $0000,  size = $10,     type = ro, file = %O, fill = yes, fillval = $FF;
+    MEM_0:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $00, fill = yes, fillval = $FF;
+    MEM_1:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $01, fill = yes, fillval = $FF;
+    MEM_2:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $02, fill = yes, fillval = $FF;
+    MEM_3:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $03, fill = yes, fillval = $FF;
+    MEM_4:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $04, fill = yes, fillval = $FF;
+    MEM_5:       start = $8000,  size = $2000,   type = ro, file = %O, bank = $05, fill = yes, fillval = $FF;
+    MEM_6:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $06, fill = yes, fillval = $00;
+    MEM_7:       start = $8000,  size = $2000,   type = ro, file = %O, bank = $07, fill = yes, fillval = $00;
+    MEM_8:       start = $8000,  size = $2000,   type = ro, file = %O, bank = $08, fill = yes, fillval = $FF;
+    MEM_9:       start = $8000,  size = $2000,   type = ro, file = %O, bank = $09, fill = yes, fillval = $FF;
+    MEM_A:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $0A, fill = yes, fillval = $FF;
+    MEM_B:       start = $8000,  size = $2000,   type = ro, file = %O, bank = $0B, fill = yes, fillval = $FF;
+    MEM_C:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $0C, fill = yes, fillval = $FF;
+    MEM_D:       start = $A000,  size = $2000,   type = ro, file = %O, bank = $0D, fill = yes, fillval = $FF;
+    MEM_E:       start = $C000,  size = $2000,   type = ro, file = %O, bank = $0E, fill = yes, fillval = $FF;
+    MEM_F:       start = $E000,  size = $2000,   type = ro, file = %O, bank = $0F, fill = yes, fillval = $FF;
+    CHR:         start = $0000,  size = $20000,   type = ro, file = %O, fill = yes, fillval = $FF;
+}
+
+
+SEGMENTS {
+    ZEROPAGE:    load = ZP,  type = zp;
+	STACK:       load = ST, type = bss;
+    OAM:         load = RAM, type = bss, start = $200, optional = yes;
+    BSS:         load = RAM, type = bss;
+    HEADER:      load = HDR, type = ro;
+    PRG_BANK_0:  load = MEM_0, type = ro;
+	PRG_BANK_1:  load = MEM_1, type = ro;
+	PRG_BANK_2:  load = MEM_2, type = ro;
+	PRG_BANK_3:  load = MEM_3, type = ro;
+	PRG_BANK_4:  load = MEM_4, type = ro;
+	PRG_BANK_5:  load = MEM_5, type = ro;
+	PRG_BANK_6:  load = MEM_6, type = ro;
+	PRG_BANK_7:  load = MEM_7, type = ro;
+	PRG_BANK_8:  load = MEM_8, type = ro;
+	PRG_BANK_9:  load = MEM_9, type = ro;
+	PRG_BANK_A:  load = MEM_A, type = ro;
+	PRG_BANK_B:  load = MEM_B, type = ro;
+	PRG_BANK_C:  load = MEM_C, type = ro;
+	PRG_BANK_D:  load = MEM_D, type = ro;
+	PRG_BANK_E:  load = MEM_E, type = ro;
+	PRG_BANK_E_TRACKS: load = MEM_E, type = ro, start = $D300;
+	PRG_BANK_F:  load = MEM_F, type = ro;
+    VECTORS:     load = MEM_F, type = ro, start = $FFFA;
+    CHR_ROM:     load = CHR, type = ro;
+}
+
+FILES {
+   %O:   format = bin;
+}

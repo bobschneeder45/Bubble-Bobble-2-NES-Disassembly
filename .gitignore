@@ -1,0 +1,9 @@
+*.nes
+*.o
+*.map
+*.log
+*labels.txt
+~$*
+
+/Junk
+/Input

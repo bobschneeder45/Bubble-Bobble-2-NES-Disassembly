@@ -1,0 +1,44 @@
+80 OR'd into state when player hit
+
+01 adventure bubbles? Despawning?, Invader?
+02 Count to 8 and despawn (01 may transition to this)
+03 Drunk bottle start
+04 Drunk bottle
+05 Drunk bottle
+06 DOH projectile begin
+07 Red skull Skel-Monsta?, DOH projectile
+08 Needler syringe
+09 Needler syringe, Ruckus bomb explosion, Robo-zen missile/hand start?, drunk bottle break
+0A Robo-zen missile appear
+0B Chucker rock flying, Heitai-kun helmet falling, Robo-zen missile flying, Ghost monsta cover fly, drunk bottle fly, Red skull Skel-Monsta
+0C Flarion fire fall, Missile tractor missile fall
+0D Needler syringe
+0C Flarion fire fall
+0E Flarion fire start
+0F Flarion fire start
+10 Missile tractor missile spawn
+11 Chucker rock spawn
+12 Needler syringe hit player? Robo-Zen hand leave
+13 Robo-Zen hand
+14 Robo-Zen hand winding
+16 Bonus game ball
+17 Splash text?, DOH projectile?
+18 Heitai-kun helmet drop, Ghost monsta cover drop
+1A Ruckus bomb start
+1C Roc large lightning
+1D Roc large lightning
+1E Roc small lightning start
+1F Roc small lightning
+20 Super Drunk orbs begin (single)
+21 Super Drunk orb (one each)
+22 Super Drunk shatter begin (single)
+23 Super Drunk shatter (one each)
+24 Blue skull fire begin (single)
+25 Blue skull fire (one each)
+26 Purple skull target
+27 Red skull heart
+28 Red skull Skel-Monsta appear
+2A Red skull Skel-Monsta? (Sideways)
+2B Red skull Skel-Monsta? (Sideways)
+2C Red skull Skel-Monsta? (Down)
+31 Chucker rock break
